@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WDD 131 – Dynamic Web Fundamentals – Alexandra Ozomma</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals course homepage for Alexandra Ozomma featuring web development resources, student bio, and project links.">
+    <meta name="author" content="Alexandra Ozomma">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
+
 <body>
-   <h1>WDD 131-Alexandra</h1> 
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/alexandra-ozomma-b98988b6?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank">I-Learn</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/nt/rom/8?lang=eng"
+                        target="_blank">Scripture</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Alexandra .A. Ozomma</h1>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="card-content">
+                <div class="about-section">
+                    <p>Hi! I'm Alexandra. I study software engineering at BYU Pathway and train in AI with TechUp
+                        Africa. I love building practical tech—from Python apps and databases to clean web pages. I'm
+                        always curious, driven by real-world impact, and deeply interested in sustainable energy
+                        solutions like EV infrastructure.</p>
+                    <img src="images/adaugo-alexandra-ozomma.jpg" alt="Alexandra Ozomma" class="profile-image" width="140" height="160">
+                </div>
+
+                <div class="location-title">Enugu, Nigeria</div>
+
+                <div class="location-details">
+                    <div class="flag-container">
+                        <img src="images/map-of-nigeria.jpg" alt="Official Flag of Nigeria" class="flag-image" width="130" height="80">
+                        <div class="flag-caption">Official Flag of Nigeria</div>
+                    </div>
+                    <p>Nigeria is located in West Africa on the Gulf of Guinea. It is known for its diverse cultures,
+                        vibrant arts scene, and rich natural landscapes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <ul class="resources-list">
+                <li><a href="https://dev.to" target="_blank">Dev.to Community</a></li>
+                <li><a href="https://www.smashingmagazine.com" target="_blank">Smashing Magazine</a></li>
+                <li><a href="https://css-tricks.com" target="_blank">CSS Tricks</a></li>
+                <li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a></li>
+                <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="currentyear"></span> 🦅 Alexandra Ozomma 🦅 Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
+
 </html>
