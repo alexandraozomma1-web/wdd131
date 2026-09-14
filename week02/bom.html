@@ -1,0 +1,30 @@
+//Enhance Book of Mormon app with input checks, limits, and UI feedback
+
+- Replace native alerts with an on-page status message for cleaner user feedback
+- Block empty submissions and prevent duplicate chapter entries
+- Enforce the 10-chapter limit to keep the list focused
+- Improve accessibility by adding descriptive labels to delete buttons
+- Automatically clear and refocus the input field for faster typing
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book of Mormon</title>
+    <link rel="stylesheet" href="styles/bom.css">
+</head>
+<body>
+    <h1>📖 Book of Mormon - Top 10</h1>
+<main>
+	<label for="favchap">Enter Book and Chapter: </label>
+	<input type="text" id="favchap" placeholder="Alma 5">
+	<button type="submit">Add Chapter</button>
+
+    <p id="message" aria-live="polite"></p>
+	<ul id="list" class="list"></ul>
+</main>
+
+<script src="scripts/bom.js"></script>
+</body>
+</html>
