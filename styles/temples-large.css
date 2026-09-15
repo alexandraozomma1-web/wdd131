@@ -1,0 +1,19 @@
+@media (min-width: 37.5em) {
+    #menu {
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        max-height: none;
+        /* Reset max-height for large screens */
+        background-color: transparent;
+    }
+
+    main.gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

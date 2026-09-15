@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO & Best Practices -->
+    <meta name="description" content="A responsive temple album showcasing temples around the world for WDD 131.">
+    <meta name="author" content="Alexandra Ozomma">
+    <title>Temple Album</title>
+
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+
+    <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu" aria-label="Toggle Navigation Menu"></button>
+    </header>
+    <nav>
+        <ul class="navigation">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Old</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Large</a></li>
+            <li><a href="#">Small</a></li>
+        </ul>
+    </nav>
+    <main class="gallery">
+        <h2>Featured Temples</h2>
+        <figure>
+            <img src="images/aba-nigeria-temple.jpg" alt="Aba Nigeria Temple" width="400" height="250" fetchpriority="high">
+            <figcaption>Aba Nigeria Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/adelaide-australia-temple.jpg" alt="Accra Ghana Temple" width="400" height="250" loading="lazy">
+            <figcaption>Accra Ghana Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/anchorage-temple.jpg" alt="Johannesburg South Africa Temple" width="400" height="225" loading="lazy">
+            <figcaption>Johannesburg South Africa Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/atlanta-temple.jpg" alt="Atlanta Temple" width="400" height="225" loading="lazy">
+            <figcaption>Atlanta Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/paraguay-temple.jpeg" alt="Paraguay Temple" width="800" height="500" loading="lazy">
+            <figcaption>Paraguay Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/belem_brazil_temple.jpg" alt="Belem Brazil Temple" width="400" height="400" loading="lazy">
+            <figcaption>Belem Brazil Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/brazil-temple.jpg" alt="Paris France Temple" width="400" height="250" loading="lazy">
+            <figcaption>Paris France Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/peru-temple.jpeg" alt="Peru Temple" width="400" height="250" loading="lazy">
+            <figcaption>Peru Temple</figcaption>
+        </figure>
+        <figure>
+            <img src="images/baton-rogue-temple.jpeg" alt="Baton Rouge Temple" width="400" height="250" loading="lazy">
+            <figcaption>Baton Rouge Temple</figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | 🦅 Alexandra Ozomma 🦅 | Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
