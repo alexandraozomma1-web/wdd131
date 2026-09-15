@@ -1,25 +1,21 @@
+/* styles/temples-large.css */
 @media (min-width: 37.5em) {
-    /* Hide the mobile menu button on larger screens */
+    /* Hide hamburger icon on desktop */
     #menu {
         display: none;
     }
 
-    /* Convert vertical menu to horizontal flex bar */
+    /* Horizontal navigation bar */
     .navigation {
-        display: flex;
+        display: flex !important;
         position: static;
         flex-direction: row;
         width: auto;
-        gap: 1.5rem;
         background-color: transparent;
     }
 
-    .navigation a {
-        padding: 0;
-    }
-
-    /* Switch gallery grid to 3 columns */
-    .gallery {
+    /* 3-column grid layout for temples */
+    main.gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }
