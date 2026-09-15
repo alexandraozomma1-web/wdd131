@@ -16,4 +16,14 @@
     main.gallery {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    body > header, 
+    body > nav {
+        background-color: #3b0a57; /* Matches your purple background header */
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
