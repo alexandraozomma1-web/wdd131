@@ -10,6 +10,7 @@ body {
 
 /* Structural Centering */
 header,
+nav,
 footer {
     max-width: 900px;
     margin: 0 auto;
@@ -23,7 +24,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 header h1 {
@@ -49,21 +49,19 @@ header h1 {
     content: "❌";
 }
 
-/* Navigation Overlay */
+/* Navigation Menu (Mobile) */
 .navigation {
-    display: none;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     background-color: #3b0a66;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 10;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
 .navigation.open {
-    display: flex;
-    flex-direction: column;
+    max-height: 500px;
 }
 
 .navigation a {
@@ -85,7 +83,6 @@ main {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    /* Single column layout for mobile */
     gap: 1.5rem;
     padding: 1rem;
 }
@@ -94,7 +91,6 @@ h2 {
     text-align: center;
     margin: 0.5rem 0 1rem;
     grid-column: 1 / -1;
-    /* Ensures title spans full grid width */
 }
 
 /* Figure Cards & Fixed Image Heights */

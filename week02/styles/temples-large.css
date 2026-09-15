@@ -1,20 +1,18 @@
-/* styles/temples-large.css */
 @media (min-width: 37.5em) {
-    /* Hide hamburger icon on desktop */
     #menu {
         display: none;
     }
 
-    /* Horizontal navigation bar */
     .navigation {
-        display: flex !important;
+        display: flex;
         position: static;
         flex-direction: row;
         width: auto;
+        max-height: none;
+        /* Reset max-height for large screens */
         background-color: transparent;
     }
 
-    /* 3-column grid layout for temples */
     main.gallery {
         grid-template-columns: repeat(3, 1fr);
     }
