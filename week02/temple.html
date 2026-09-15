@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO & Best Practices -->
+    <meta name="description" content="A responsive temple album showcasing temples around the world for WDD 131.">
+    <meta name="author" content="Alexandra Ozomma">
+    <title>Temple Album</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@500&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/temple.css">
+    <link rel="stylesheet" href="styles/temple-large.css">
+
+    <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu" aria-label="Toggle Navigation Menu"></button>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+        <h2>Featured Temples</h2>
+        <div class="gallery">
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+                    alt="Aba Nigeria Temple" width="400" height="250" fetchpriority="high">
+                <figcaption>Aba Nigeria Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/albuquerque-new-mexico/400x250/albuquerque-temple-lds-998219-wallpaper.jpg"
+                    alt="Accra Ghana Temple" width="400" height="250" loading="lazy">
+                <figcaption>Accra Ghana Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/adelaide-australia/400x225/adelaide-australia-temple-lds-866420-wallpaper.jpg"
+                    alt="Johannesburg South Africa Temple" width="400" height="225" loading="lazy">
+                <figcaption>Johannesburg South Africa Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/anchorage-alaska/400x225/anchorage-temple-lds-253274-wallpaper.jpg"
+                    alt="Salt Lake Temple" width="400" height="225" loading="lazy">
+                <figcaption>Salt Lake Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/baton-rouge-louisiana/800x500/1-ea20b19384c9f98d17ef56b627c79c3a75f62cb3.jpeg"
+                    alt="Rome Italy Temple" width="800" height="500" loading="lazy">
+                <figcaption>Rome Italy Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/albuquerque-new-mexico/400x400/albuquerque-temple-lds-820684-wallpaper.jpg"
+                    alt="Tokyo Japan Temple" width="400" height="400" loading="lazy">
+                <figcaption>Tokyo Japan Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/anchorage-alaska/400x250/anchorage-temple-lds-746769-wallpaper.jpg"
+                    alt="Paris France Temple" width="400" height="250" loading="lazy">
+                <figcaption>Paris France Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/apia-samoa/400x250/apia-samoa-temple-lds-460475-wallpaper.jpg"
+                    alt="Kinshasa DR Congo Temple" width="400" height="250" loading="lazy">
+                <figcaption>Kinshasa DR Congo Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/adelaide-australia/400x250/adelaide-australia-temple-lds-856093-wallpaper.jpg"
+                    alt="Durban South Africa Temple" width="400" height="250" loading="lazy">
+                <figcaption>Durban South Africa Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | 🦅 Alexandra Ozomma 🦅 | Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
