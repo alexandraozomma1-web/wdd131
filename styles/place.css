@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #1a5e54; 
+    --accent-color: #2a8a7c;       
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #111111;
+    --light-text: #ffffff;
+    --font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: #ffffff;
+}
+
+/* Header & Footer */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 0.8rem 1rem;
+    max-width: 1000px; /* Constrains header width */
+    margin: 0 auto;    /* Centers the header on desktop screens */
+    width: 100%;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+main {
+    max-width: 1000px; /* Constrains main content width to match header/footer */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Mobile Hero Image */
+.hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile Cards (Stacks Vertically Below Image) */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    border-radius: 3px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px dotted #dddddd;
+    font-size: 0.95rem;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+.weather-icon-mobile {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    max-width: 1000px; /* Constrains footer width */
+    margin: 0 auto;    /* Centers the footer on desktop screens */
+    width: 100%;
+}
+
+footer p {
+    margin: 0.2rem 0;
+}
+
+@media (min-width: 800px) {
+    .hero {
+        min-height: 550px;
+        overflow: hidden;
+    }
+
+    .hero img {
+        height: 550px;
+        object-fit: cover;
+    }
+
+    .card {
+        margin: 0;
+        background-color: var(--card-bg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .data-card {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 310px;
+    }
+
+    .weather-card {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        width: 310px;
+    }
+
+    .weather-icon-mobile {
+        display: none;
+    }
+
+    .weather-card h2::after {
+        content: " ⛅";
+        font-size: 1.2rem;
+        vertical-align: middle;
+    }
+}
