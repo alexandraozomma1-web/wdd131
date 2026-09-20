@@ -9,8 +9,6 @@
         content="WDD 131 - Country Page for Switzerland showcasing location data and weather details.">
     <meta name="author" content="Alexandra Ozomma">
     <link rel="stylesheet" href="styles/place.css">
-    <span id="windchill"></span>
-    <script src="scripts/place.js" defer></script>
 </head>
 
 <body>
@@ -22,7 +20,8 @@
         <div class="hero">
             <picture>
                 <source media="(min-width: 800px)" srcset="images/switzerland-landscape.webp">
-                <img src="images/switzerland-potrait.webp" alt="Scenic view of the Swiss Alps" width="500" height="300">
+                <img src="images/switzerland-portrait.webp" alt="Scenic view of the Swiss Alps" width="500"
+                    height="300">
             </picture>
 
             <!-- Data Card -->
@@ -41,6 +40,7 @@
                 </ul>
             </section>
 
+            <!-- Weather Card -->
             <section class="card weather-card">
                 <h2>Weather</h2>
                 <div class="weather-icon-mobile">
@@ -65,6 +65,7 @@
         <p>&copy; <span id="currentyear"></span> | Alexandra Ozomma | Switzerland</p>
         <p id="lastModified"></p>
     </footer>
+    <script src="scripts/place.js" defer></script>
 </body>
 
 </html>
