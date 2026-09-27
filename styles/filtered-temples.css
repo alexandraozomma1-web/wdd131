@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+/* Structural Centering */
+header,
+nav,
+footer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background-color: #3b0a66;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;   /* centers the links horizontally */
+    align-items: center;       /* aligns them vertically */
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;                 /* spacing between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Mobile Hamburger Button */
+#menu {
+    font-size: 1.8rem;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❌";
+}
+
+/* Navigation Menu (Mobile) */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: #3b0a66;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.navigation.open {
+    max-height: 500px;
+}
+
+.navigation a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation a:hover {
+    background-color: #2a0748;
+}
+
+/* Main Content & Mobile Grid */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 0.5rem 0 1rem;
+    grid-column: 1 / -1;
+}
+
+/* Figure Cards & Fixed Image Heights */
+figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #3b0a66;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+/* Container CSS Grid */
+#temple-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.temple-card {
+  background-color: #eee; /* Light grey background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center; /* Center-align header and text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Heading */
+.temple-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: #111;
+}
+
+/* Paragraph Text & Label Styling */
+.temple-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.temple-card .label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #5c3c8b; /* Purple label color matching instructor's example */
+}
+
+/* Image Styling */
+.temple-card img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+  margin: 1rem auto 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Drop shadow around images */
+}
