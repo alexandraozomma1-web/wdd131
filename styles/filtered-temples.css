@@ -35,13 +35,16 @@ header h1 {
 /* Navigation Styling */
 nav {
     display: flex;
-    justify-content: center;   /* centers the links horizontally */
-    align-items: center;       /* aligns them vertically */
+    justify-content: center;
+    /* centers the links horizontally */
+    align-items: center;
+    /* aligns them vertically */
 }
 
 nav ul {
     display: flex;
-    gap: 1rem;                 /* spacing between links */
+    gap: 1rem;
+    /* spacing between links */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -144,56 +147,60 @@ footer {
     font-size: 0.85rem;
     margin-top: 2rem;
 }
+
 /* Container CSS Grid */
 #temple-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Individual Card Styling */
 .temple-card {
-  background-color: #eee; /* Light grey background */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.25rem;
-  text-align: center; /* Center-align header and text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #eee;
+    /* Light grey background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    /* Center-align header and text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Card Heading */
 .temple-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  font-size: 1.3rem;
-  color: #111;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    color: #111;
 }
 
 /* Paragraph Text & Label Styling */
 .temple-card p {
-  margin: 0.25rem 0;
-  font-size: 0.95rem;
-  color: #333;
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+    color: #333;
 }
 
 .temple-card .label {
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #5c3c8b; /* Purple label color matching instructor's example */
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #431263;
 }
 
 /* Image Styling */
 .temple-card img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: cover;
-  display: block;
-  margin: 1rem auto 0;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Drop shadow around images */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    margin: 1rem auto 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    /* Drop shadow around images */
 }
