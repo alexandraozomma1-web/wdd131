@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Estimated Solar EV swap/charging cost (approx 60% cheaper than petrol)
         const dailySolarCost = dailyPetrolCost * 0.4;
         const dailySavings = dailyPetrolCost - dailySolarCost;
-        const monthlySavings = dailySavings * 30;
+        const monthlySavings = dailySavings * 31;
 
         return {
             petrolCost: Math.round(dailyPetrolCost),
