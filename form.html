@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alexandra Ozomma">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+        <form method="get" action="review.html">
+            
+            <!-- 1. Product Name (Select) -->
+            <label for="productName">Product Name</label>
+            <select id="productName" name="productName" required>
+                <option value="" disabled selected>Select a Product ...</option>
+                <!-- Dynamic options will be loaded here by JavaScript -->
+            </select>
+
+            <!-- 2. Overall Rating (Radio Buttons) -->
+            <fieldset class="rating-fieldset">
+                <legend>Overall Rating</legend>
+                <div class="rating-group">
+                    <label for="rating1">
+                        <span>&star;</span>
+                        <input type="radio" id="rating1" name="overallRating" value="1" required>
+                    </label>
+                    <label for="rating2">
+                        <span>&star;&star;</span>
+                        <input type="radio" id="rating2" name="overallRating" value="2" required>
+                    </label>
+                    <label for="rating3">
+                        <span>&star;&star;&star;</span>
+                        <input type="radio" id="rating3" name="overallRating" value="3" required>
+                    </label>
+                    <label for="rating4">
+                        <span>&star;&star;&star;&star;</span>
+                        <input type="radio" id="rating4" name="overallRating" value="4" required>
+                    </label>
+                    <label for="rating5">
+                        <span>&star;&star;&star;&star;&star;</span>
+                        <input type="radio" id="rating5" name="overallRating" value="5" required>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- 3. Date of Installation -->
+            <label for="installDate">Date of Installation</label>
+            <input type="date" id="installDate" name="installDate" required>
+
+            <!-- 4. Useful Features (Checkboxes) -->
+            <fieldset class="features-fieldset">
+                <legend>Which features did you find useful in the product? <em>(Check all that apply)</em></legend>
+                
+                <label for="featureDurability">
+                    <input type="checkbox" id="featureDurability" name="features" value="durability">
+                    Durability
+                </label>
+                
+                <label for="featureEase">
+                    <input type="checkbox" id="featureEase" name="features" value="easeOfUse">
+                    Ease of Use
+                </label>
+                
+                <label for="featurePerf">
+                    <input type="checkbox" id="featurePerf" name="features" value="performance">
+                    Performance
+                </label>
+                
+                <label for="featureDesign">
+                    <input type="checkbox" id="featureDesign" name="features" value="design">
+                    Design
+                </label>
+            </fieldset>
+
+            <!-- 5. Written Review -->
+            <label for="writtenReview">Written Review <span class="optional">(Optional)</span></label>
+            <textarea id="writtenReview" name="writtenReview" rows="4"></textarea>
+
+            <!-- 6. User Name -->
+            <label for="userName">Your Name <span class="optional">(Optional)</span></label>
+            <input type="text" id="userName" name="userName">
+
+            <!-- 7. Submit Button -->
+            <input type="submit" id="submitBtn" value="Post Review">
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> | 🦅Alexandra Ozomma 🦅| Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>
