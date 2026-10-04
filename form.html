@@ -1,14 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A product review form allowing users to rate and submit feedback on installed products.">
+    <!-- ADD THIS LINE -->
     <meta name="author" content="Alexandra Ozomma">
-    <title>Product Review Form</title>
+    <title>Product Review</title>
     <link rel="stylesheet" href="styles/form.css">
-    <script src="scripts/form.js" defer></script>
 </head>
+
 <body>
 
     <header>
@@ -17,7 +20,7 @@
 
     <main>
         <form method="get" action="review.html">
-            
+
             <!-- 1. Product Name (Select) -->
             <label for="productName">Product Name</label>
             <select id="productName" name="productName" required>
@@ -59,22 +62,22 @@
             <!-- 4. Useful Features (Checkboxes) -->
             <fieldset class="features-fieldset">
                 <legend>Which features did you find useful in the product? <em>(Check all that apply)</em></legend>
-                
+
                 <label for="featureDurability">
                     <input type="checkbox" id="featureDurability" name="features" value="durability">
                     Durability
                 </label>
-                
+
                 <label for="featureEase">
                     <input type="checkbox" id="featureEase" name="features" value="easeOfUse">
                     Ease of Use
                 </label>
-                
+
                 <label for="featurePerf">
                     <input type="checkbox" id="featurePerf" name="features" value="performance">
                     Performance
                 </label>
-                
+
                 <label for="featureDesign">
                     <input type="checkbox" id="featureDesign" name="features" value="design">
                     Design
@@ -101,4 +104,5 @@
     </footer>
 
 </body>
+
 </html>
