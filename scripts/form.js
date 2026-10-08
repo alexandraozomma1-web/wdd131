@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productSelect.appendChild(option);
     });
 
-    // Dynamic Footer Dates
     document.querySelector("#currentyear").textContent = new Date().getFullYear();
     document.querySelector("#lastModified").textContent = `Last Modification: ${document.lastModified}`;
 });
+
