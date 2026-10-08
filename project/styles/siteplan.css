@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #d3d2d6;
+    --secondary-color: #141e3f;
+    --accent-color: #3B82F6;
+    --dark-bg: #1F2937;
+    --light-bg: #F3F4F6;
+    --heading-font: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    --body-font: Verdana, sans-serif;
+}
+
+/* Universal Reset - Fixed selector from '-' to '*' */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+.plan-section {
+    background: #ffffff;
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.plan-section h2 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 0.3rem;
+    font-size: 1.25rem;
+}
+
+.plan-section ul {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.plan-section li {
+    margin-bottom: 0.5rem;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.wireframe-box,
+.wireframe-container {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.wireframe-box img,
+.wireframe-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.wireframe-box h3,
+.wireframe-container h3 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    margin-top: 2rem;
+}
+
+/* Larger Screens */
+@media screen and (min-width: 650px) {
+    header {
+        padding: 2rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        margin: 2rem auto;
+    }
+
+    .plan-section {
+        padding: 1.75rem 2rem;
+    }
+}
