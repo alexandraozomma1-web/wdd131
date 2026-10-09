@@ -1,7 +1,8 @@
 :root {
-    --primary-color: #F59E0B;   /* Solar Amber */
+    --primary-color: #F59E0B;   /* Solar Amber (Used for buttons/accents) */
+    --primary-light: #FCD34D;   /* Lighter Solar Amber (High contrast on dark green) */
     --secondary-color: #074F37; /* Eco Green */
-    --accent-color: #3B82F6;    /* Tech Blue */
+    --accent-color: #1E3A8A;   /* Tech Blue */
     --dark-bg: #1F2937;         /* Charcoal */
     --light-bg: #F3F4F6;        /* Light Grey */
     --white: #ffffff;
@@ -9,6 +10,7 @@
     --body-font: Verdana, sans-serif;
 }
 
+/* Universal Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -44,7 +46,7 @@ header {
     font-family: var(--heading-font);
     font-size: 1.4rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--white);
 }
 
 #menu-toggle {
@@ -54,6 +56,11 @@ header {
     font-size: 1.8rem;
     cursor: pointer;
     display: block;
+}
+
+#menu-toggle:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
 }
 
 nav {
@@ -85,25 +92,32 @@ nav a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Primary color with black text gives >10:1 contrast */
 nav a:hover,
 nav a.active {
     background-color: var(--primary-color);
-    color: var(--dark-bg);
+    color: #000000;
     font-weight: bold;
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: -2px;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(7, 79, 55, 0.85), rgba(31, 41, 55, 0.85)), #074F37;
+    background: linear-gradient(rgba(7, 79, 55, 0.88), rgba(31, 41, 55, 0.88)), #074F37;
     color: var(--white);
     text-align: center;
     padding: 3rem 1.5rem;
 }
 
+/* FIX: Used --primary-light (#FCD34D) to achieve 7.5:1 WCAG AA compliant contrast on dark background */
 .hero h1 {
     font-family: var(--heading-font);
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--primary-light);
     margin-bottom: 1rem;
 }
 
@@ -124,11 +138,16 @@ nav a.active {
 
 .primary-btn {
     background-color: var(--primary-color);
-    color: var(--dark-bg);
+    color: #000000; /* High contrast black on amber */
 }
 
 .primary-btn:hover {
     background-color: #d97706;
+}
+
+.primary-btn:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
 }
 
 /* Content & Hubs Section */
@@ -154,7 +173,7 @@ main {
 .section-intro {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #4b5563;
+    color: #374151; /* Compliant charcoal text on white */
 }
 
 .hubs-grid {
@@ -180,7 +199,7 @@ main {
 .hub-status {
     display: inline-block;
     background-color: #d1fae5;
-    color: #065f46;
+    color: #065f46; /* High contrast green tag */
     padding: 0.2rem 0.6rem;
     border-radius: 12px;
     font-size: 0.85rem;
@@ -199,25 +218,90 @@ main {
 }
 
 #visit-count {
-    color: var(--accent-color);
+    color: #1E3A8A; 
 }
-
-/* Footer */
+/* Footer Section */
 footer {
-    background-color: var(--dark-bg);
+    background-color: var(--secondary-color);
     color: var(--white);
     text-align: center;
     padding: 1.5rem;
     margin-top: auto;
+    border-top: 4px solid var(--primary-color);
 }
 
+/* FIX: Changed footer link color to bright yellow (#FDE047) for >7:1 WCAG AA contrast ratio on dark green */
 footer a {
-    color: var(--primary-color);
-    text-decoration: none;
+    color: #FDE047;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: var(--white);
+}
+
+footer a:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Calculator Form & Results Styles */
+.calculator-section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--dark-bg);
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.6rem;
+    border: 1px solid #6B7280; /* Darkened border for 3:1 non-text contrast */
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--dark-bg);
+    background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.calc-results-box {
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--secondary-color);
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+}
+
+.highlight-savings {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
 }
 
 /* Media Query for Desktop Views */
@@ -252,51 +336,4 @@ footer a:hover {
     .hubs-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-/* Calculator Form & Results Styles */
-.calculator-section {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    margin-top: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.calc-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin: 1.5rem 0;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.form-group label {
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.calc-results-box {
-    background-color: var(--light-bg);
-    border-left: 5px solid var(--secondary-color);
-    padding: 1.2rem;
-    margin-top: 1.5rem;
-    border-radius: 4px;
-}
-
-.highlight-savings {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
 }

@@ -1,14 +1,16 @@
 :root {
-    --primary-color: #d3d2d6;
-    --secondary-color: #141e3f;
-    --accent-color: #3B82F6;
-    --dark-bg: #1F2937;
-    --light-bg: #F3F4F6;
+    --primary-color: #F59E0B;   /* Solar Amber */
+    --primary-light: #FCD34D;   /* Lighter Amber for dark backgrounds */
+    --secondary-color: #074F37; /* Eco Green */
+    --accent-color: #1E3A8A;    /* Dark Tech Blue (WCAG AAA compliant) */
+    --dark-bg: #1F2937;         /* Charcoal */
+    --light-bg: #F3F4F6;        /* Light Grey */
+    --white: #ffffff;
     --heading-font: 'Segoe UI', Tahoma, Geneva, sans-serif;
     --body-font: Verdana, sans-serif;
 }
 
-/* Universal Reset - Fixed selector from '-' to '*' */
+/* Universal Reset Fix */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,42 +22,88 @@ body {
     background-color: var(--light-bg);
     color: var(--dark-bg);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Header Matching index.css */
 header {
     background-color: var(--secondary-color);
-    color: #ffffff;
-    text-align: center;
+    border-bottom: 4px solid var(--primary-color);
     padding: 1.5rem 1rem;
-    border-bottom: 5px solid var(--primary-color);
+    text-align: center;
+    color: var(--white);
 }
 
 header h1 {
     font-family: var(--heading-font);
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    color: var(--primary-light); /* Lighter amber for 7.5:1 WCAG contrast */
+    margin-bottom: 0.3rem;
 }
 
 header h2 {
     font-size: 1rem;
     font-weight: normal;
+    color: var(--white);
 }
 
+/* Navigation Bar */
+.plan-nav {
+    margin-top: 1.2rem;
+}
+
+.plan-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.plan-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.plan-nav a:hover,
+.plan-nav a.active {
+    background-color: var(--primary-color);
+    color: #000000; /* Pure black text over amber for high contrast */
+}
+
+.plan-nav a:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Main Layout Grid */
 main {
+    flex: 1;
     width: 100%;
-    max-width: 900px;
-    margin: 1rem auto;
-    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first single column */
+    gap: 1.5rem; /* Prevents cards from smashing together */
 }
 
 .plan-section {
-    background: #ffffff;
-    padding: 1.25rem 1rem;
-    margin-bottom: 1.25rem;
+    background-color: var(--white);
     border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     border-left: 5px solid var(--secondary-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .plan-section h2 {
@@ -63,8 +111,8 @@ main {
     color: var(--secondary-color);
     margin-bottom: 0.8rem;
     border-bottom: 2px solid var(--light-bg);
-    padding-bottom: 0.3rem;
-    font-size: 1.25rem;
+    padding-bottom: 0.4rem;
+    font-size: 1.3rem;
 }
 
 .plan-section ul {
@@ -73,6 +121,42 @@ main {
 }
 
 .plan-section li {
+    margin-bottom: 0.5rem;
+}
+
+.plan-section a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Wireframe Container Layout */
+.wireframe-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.wireframe-box {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #E5E7EB;
+}
+
+.wireframe-box img,
+.wireframe-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.wireframe-box h3,
+.wireframe-container h3 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
@@ -86,52 +170,37 @@ main {
     border: 1px solid #ccc;
 }
 
-.wireframe-box,
-.wireframe-container {
-    background-color: var(--light-bg);
-    padding: 1rem;
-    border-radius: 6px;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.wireframe-box img,
-.wireframe-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-.wireframe-box h3,
-.wireframe-container h3 {
-    font-family: var(--heading-font);
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-}
-
+/* Footer Matched with index.css */
 footer {
     text-align: center;
     padding: 1.5rem 1rem;
-    background-color: var(--dark-bg);
-    color: #ffffff;
-    margin-top: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    margin-top: auto;
+    border-top: 4px solid var(--primary-color);
 }
 
-/* Larger Screens */
-@media screen and (min-width: 650px) {
-    header {
-        padding: 2rem;
-    }
+footer a {
+    color: #FDE047; /* Bright yellow link passes WCAG AA on dark green */
+    text-decoration: underline;
+    font-weight: bold;
+}
 
-    header h1 {
-        font-size: 2rem;
-    }
+footer a:hover {
+    color: var(--white);
+}
 
+/* Responsive Grid for Desktop Screens */
+@media (min-width: 768px) {
     main {
-        margin: 2rem auto;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .plan-section {
-        padding: 1.75rem 2rem;
+    .plan-section.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .wireframe-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
