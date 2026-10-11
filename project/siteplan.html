@@ -7,17 +7,22 @@
     <meta name="description" content="Site plan document for Solar Charge Africa website project.">
     <meta name="author" content="Alexandra Ozomma">
     <title>Solar Charge Africa | Site Plan</title>
-    <link rel="stylesheet" href="styles/index.css">
+
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/siteplan.css">
-    <!-- <link rel="stylesheet" href="styles/index-large.css"> -->
+
+    <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <h1>Solar Charge Africa - Site Plan</h1>
-        <h2>Alexandra Ozomma | WDD 131</h2>
-        <nav class="plan-nav">
+        <div class="logo-container">
+            <a href="index.html" class="logo">⚡ Solar Charge Africa</a>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Services & Calculator</a></li>
@@ -29,52 +34,67 @@
 
     <main>
 
+        <section class="page-banner siteplan-banner">
+            <div class="banner-content">
+                <h1>Solar Charge Africa - Site Plan</h1>
+                <p>Alexandra Ozomma | WDD 131</p>
+            </div>
+        </section>
+
         <section class="plan-section">
             <h2>Site Name</h2>
             <p><strong>Name:</strong> Solar Charge Africa</p>
-            <p><strong>Reason for Name:</strong> The name clearly describes the core mission: powering clean electric mobility across Sub-Saharan Africa using off-grid solar infrastructure and rapid battery swapping.</p>
+            <p><strong>Reason for Name:</strong> The name clearly describes the core mission: powering clean electric
+                mobility across Sub-Saharan Africa using off-grid solar infrastructure and rapid battery swapping.</p>
         </section>
 
         <section class="plan-section">
             <h2>Site Purpose</h2>
-            <p>The purpose of this site is to educate commercial transport operators, fleet managers, and EV stakeholders on off-grid solar charging and rapid battery-swapping solutions across Sub-Saharan Africa. It provides interactive tools such as fuel savings calculators, fleet inquiry forms, and a charging hub directory to accelerate the clean energy transition.</p>
+            <p>The purpose of this site is to educate commercial transport operators, fleet managers, and EV
+                stakeholders on off-grid solar charging and rapid battery-swapping solutions across Sub-Saharan Africa.
+                It provides interactive tools such as fuel savings calculators, fleet inquiry forms, and a charging hub
+                directory to accelerate the clean energy transition.</p>
         </section>
 
         <section class="plan-section">
             <h2>Scenarios</h2>
             <ul>
-                <li><em>Scenario 1:</em> "How much money can I save daily on operational costs if I switch my commercial tricycle fleet from petrol to solar battery swapping?"</li>
-                <li><em>Scenario 2:</em> "Where can I locate the nearest operational off-grid solar charging and swap hub along my daily driving route?"</li>
-                <li><em>Scenario 3:</em> "How can I submit an inquiry to partner or onboard my commercial vehicle fleet into the battery-swapping network?"</li>
+                <li><em>Scenario 1:</em> "How much money can I save daily on operational costs if I switch my commercial
+                    tricycle fleet from petrol to solar battery swapping?"</li>
+                <li><em>Scenario 2:</em> "Where can I locate the nearest operational off-grid solar charging and swap
+                    hub along my daily driving route?"</li>
+                <li><em>Scenario 3:</em> "How can I submit an inquiry to partner or onboard my commercial vehicle fleet
+                    into the battery-swapping network?"</li>
             </ul>
         </section>
 
         <section class="plan-section">
             <h2>Color Scheme</h2>
-            <p>The following color palette is defined and actively used throughout this site plan and the final website:</p>
+            <p>The following color palette is defined and actively used throughout this site plan and the final website:
+            </p>
             <ul>
                 <li>
-                    <strong>Primary Color (<code>#F59E0B</code> - Solar Amber):</strong>
+                    <strong>Primary Color (<code>#F59E0B</code> Solar Amber):</strong>
                     Used for primary action buttons, active navigation links, and call-to-action highlights.
                     <span class="color-swatch" style="background-color: #F59E0B;"></span>
                 </li>
                 <li>
-                    <strong>Secondary Color (<code>#074F37</code> - Eco Green):</strong>
+                    <strong>Secondary Color (<code>#074F37</code> Eco Green):</strong>
                     Used for header backgrounds, primary borders, and sustainability badges.
                     <span class="color-swatch" style="background-color: #074F37;"></span>
                 </li>
                 <li>
-                    <strong>Accent Color (<code>#3B82F6</code> - Tech Blue):</strong>
+                    <strong>Accent Color (<code>#3B82F6</code> Tech Blue):</strong>
                     Used for secondary links, interactive focus states, and data visualization elements.
                     <span class="color-swatch" style="background-color: #3B82F6;"></span>
                 </li>
                 <li>
-                    <strong>Dark Background (<code>#1F2937</code> - Charcoal):</strong>
+                    <strong>Dark Background (<code>#1F2937</code> Charcoal):</strong>
                     Used for body text on light surfaces and footer backgrounds.
                     <span class="color-swatch" style="background-color: #1F2937;"></span>
                 </li>
                 <li>
-                    <strong>Light Background (<code>#F3F4F6</code> - Light Grey):</strong>
+                    <strong>Light Background (<code>#F3F4F6</code> Light Grey):</strong>
                     Used for section card container backgrounds.
                     <span class="color-swatch" style="background-color: #F3F4F6;"></span>
                 </li>
@@ -85,32 +105,58 @@
             <h2>Typography</h2>
             <p>The following font families are selected and used across the document and website:</p>
             <ul>
-                <li><strong>Heading Font ('Segoe UI', Tahoma, Geneva, sans-serif):</strong> Applied to all major headings (<code>h1</code>, <code>h2</code>, <code>h3</code>) for a clean, modern tech feel.</li>
-                <li><strong>Body Font (Verdana, sans-serif):</strong> Applied to main paragraph text, lists, and forms for maximum readability across screens.</li>
+                <li><strong>Heading Font ('Segoe UI', Tahoma, Geneva, sans-serif):</strong> Applied to all major
+                    headings (<code>h1</code>, <code>h2</code>, <code>h3</code>) for a clean, modern tech feel.</li>
+                <li><strong>Body Font (Verdana, sans-serif):</strong> Applied to main paragraph text, lists, and forms
+                    for maximum readability across screens.</li>
             </ul>
         </section>
 
-      <section class="plan-section full-width">
-    <h2>Wireframes</h2>
-    <p>Layout sketches for the home page layout across mobile and desktop devices:</p>
-    
-    <div class="wireframe-container">
-        <div class="wireframe-box">
-            <h3>Mobile Layout</h3>
-            <img src="images/siteplan-wireframe-mobile-new.png" alt="Mobile wireframe layout">
-        </div>
+        <section class="plan-section full-width">
+            <h2>Wireframes</h2>
+            <p>Layout sketches for the home page layout across mobile and desktop devices:</p>
 
-        <div class="wireframe-box">
-            <h3>Desktop Layout</h3>
-            <img src="images/siteplan-wireframe-desktop-new.png" alt="Desktop wireframe layout">
-        </div>
-    </div>
-</section>
+            <div class="wireframe-container">
+                <div class="wireframe-box">
+                    <h3>Mobile Layout</h3>
+                    <img src="images/siteplan-wireframe-mobile-new.png" alt="Mobile wireframe layout" loading="lazy"
+                        width="400" height="300">
+                </div>
+
+                <div class="wireframe-box">
+                    <h3>Desktop Layout</h3>
+                    <img src="images/siteplan-wireframe-desktop-new.png" alt="Desktop wireframe layout" loading="lazy"
+                        width="600" height="400">
+                </div>
+            </div>
+        </section>
 
     </main>
-
-    <footer>
-        <p>&copy; 2026 Solar Charge Africa | Alexandra Ozomma</p>
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-column">
+                <h4>Solar Charge Africa</h4>
+                <p>Powering clean, affordable, and off-grid electric transport for commercial operators.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Services &amp; Calculator</a></li>
+                    <li><a href="order.html">Fleet Inquiry</a></li>
+                    <li><a href="siteplan.html">Site Plan</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact &amp; Support</h4>
+                <p>Email: info@solarchargeafrica.com</p>
+                <p>Enugu State &amp; Lagos, Nigeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Solar Charge Africa | Alexandra Ozomma | Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 
 </body>

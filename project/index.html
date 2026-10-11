@@ -7,8 +7,11 @@
     <meta name="description" content="Solar Charge Africa - Off-grid solar battery swapping for electric commercial vehicles across Sub-Saharan Africa.">
     <meta name="author" content="Alexandra Ozomma">
     <title>Solar Charge Africa | Home</title>
+
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/index.css">
-    <!-- <script src="scripts/index.js" defer></script> -->
+
+    <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
@@ -19,14 +22,14 @@
             <span class="logo-text">Solar Charge Africa</span>
         </div>
         <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="menu.html">Services & Calculator</a></li>
-                <li><a href="order.html">Fleet Inquiry</a></li>
-                <li><a href="siteplan.html">Site Plan</a></li>
-            </ul>
-        </nav>
+      <nav id="nav-menu">
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html" class="active">Services &amp; Calculator</a></li>
+        <li><a href="order.html" class="active">Fleet Inquiry</a></li>
+        <li><a href="siteplan.html" class="active">Site Plan</a></li>
+    </ul>
+</nav>
     </header>
 
     <main>
@@ -40,26 +43,85 @@
             </div>
         </section>
 
-        <!-- Dynamic Hubs Section -->
-        <section class="hubs-section">
-            <h2>Active Solar Swap Hubs</h2>
-            <p class="section-intro">Explore operational charging stations offering 3-minute rapid battery swaps.</p>
-            
-            <div id="hubs-container" class="hubs-grid">
-                <!-- JavaScript will dynamically render hub cards here -->
+        <!-- Key Highlights Section -->
+        <section class="hero-card-section">
+            <h2 class="sr-only">Key Highlights</h2> <!-- Recommended for screen reader accessibility -->
+            <div class="hero-image-wrapper">
+                <img src="images/sustainable-energy-electric-vehicle-charging-station-with-solar-panels-and-wind-turbines-at-sunset-free-photo.webp" 
+                     alt="Off-grid solar charging hub with solar panels" loading="lazy"
+                     width="1200" 
+                     height="800">
+            </div>
+            <div class="stats-cards-wrapper">
+                <article class="stat-card">
+                    <h3>90%</h3>
+                    <p>Daily Fuel Cost Savings</p>
+                </article>
+                <article class="stat-card">
+                    <h3>&lt; 3 Mins</h3>
+                    <p>Rapid Battery Swap Time</p>
+                </article>
             </div>
         </section>
 
+        <!-- Dynamic Hubs Section -->
+
+    
+ <section class="swap-hubs-section">
+    <h3>Active Solar Swap Hubs</h3>
+    <p>Explore operational charging stations offering 3-minute rapid battery swaps.</p>
+    
+    <div class="hubs-grid">
+        <div class="hub-card">
+            <h4>Enugu State Hub</h4>
+            <p><strong>Location:</strong> Independence Layout, Enugu</p>
+            <p><strong>Status:</strong> Fully Operational</p>
+        </div>
+        <div class="hub-card">
+            <h4>Lagos State Hub</h4>
+            <p><strong>Location:</strong> Ikeja Industrial Zone, Lagos</p>
+            <p><strong>Status:</strong> Fully Operational</p>
+        </div>
+        <div class="hub-card">
+            <h4>Port Harcourt Hub</h4>
+            <p><strong>Location:</strong> Trans Amadi Industrial Layout, Port Harcourt</p>
+            <p><strong>Status:</strong> Fully Operational</p>
+        </div>
+    </div>
+</section>
+
         <!-- Visit Counter Callout -->
-        <section class="counter-banner">
+        <div class="counter-banner">
             <p>Welcome! You have visited this site <span id="visit-count">1</span> time(s).</p>
-        </section>
+        </div>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Solar Charge Africa | Alexandra Ozomma | Nigeria</p>
-        <p><a href="siteplan.html">View Site Plan</a></p>
+   <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-column">
+                <h4>Solar Charge Africa</h4>
+                <p>Powering clean, affordable, and off-grid electric transport for commercial operators.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Services &amp; Calculator</a></li>
+                    <li><a href="order.html">Fleet Inquiry</a></li>
+                    <li><a href="siteplan.html">Site Plan</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact &amp; Support</h4>
+                <p>Email: info@solarchargeafrica.com</p>
+                <p>Enugu State &amp; Lagos, Nigeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Solar Charge Africa | Alexandra Ozomma | Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 
 </body>

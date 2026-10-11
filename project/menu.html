@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Solar Charge Africa - Services and Fuel Savings Calculator for commercial EV fleets.">
+    <meta name="author" content="Alexandra Ozomma">
+    <title>Solar Charge Africa | Services & Calculator</title>
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/menu.css">
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/calculator.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-symbol">⚡</span>
+            <span class="logo-text">Solar Charge Africa</span>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Services & Calculator</a></li>
+                <li><a href="order.html">Fleet Inquiry</a></li>
+                <li><a href="siteplan.html">Site Plan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="page-banner">
+            <div class="banner-content">
+                <h1>Our Services &amp; Fleet Savings</h1>
+                <p>Discover our off-grid solar subscription plans and calculate your daily operational cost savings by
+                    transitioning to electric battery swapping.</p>
+            </div>
+        </section>
+
+        <div class="banner-image-wrapper" style="margin-bottom: 2rem; text-align: center;">
+            <img src="images/evs-charging-park.webp" alt="Solar charging station for tricycles" loading="lazy"
+                style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 8px;">
+        </div>
+
+        <section class="subscription-plans-section">
+            <h2>Subscription & Conversion Plans</h2>
+            <p class="section-desc">Transition your fleet to clean electric power with our off-grid solar conversion
+                packages.</p>
+
+            <div class="plans-grid">
+                <!-- Motorcycle Plan -->
+                <div class="plan-card">
+                    <h3>Delivery Motorcycle</h3>
+                    <p class="price">₦1.5 Million <span>/ vehicle</span></p>
+                    <ul>
+                        <li>Full Electric Conversion Kit</li>
+                        <li>Access to Unlimited Rapid Battery Swaps</li>
+                        <li>Off-Grid Solar Charging Support</li>
+                        <li>Routine Maintenance Included</li>
+                    </ul>
+                    <a href="order.html" class="btn-plan">Get Started</a>
+                </div>
+
+                <!-- Tricycle Plan -->
+                <div class="plan-card featured">
+                    <span class="badge">Most Popular</span>
+                    <h3>Commercial Tricycle (Keke)</h3>
+                    <p class="price">₦3.5 Million <span>/ vehicle</span></p>
+                    <ul>
+                        <li>Full Electric Conversion Kit</li>
+                        <li>3-Minute Rapid Swap Battery Pack</li>
+                        <li>High-Torque EV Motor Upgrade</li>
+                        <li>Off-Grid Solar Charging Support</li>
+                    </ul>
+                    <a href="order.html" class="btn-plan">Get Started</a>
+                </div>
+
+                <!-- Minibus Plan -->
+                <div class="plan-card">
+                    <h3>Mini 8-Seater Bus</h3>
+                    <p class="price">₦4.5 Million <span>/ vehicle</span></p>
+                    <ul>
+                        <li>Heavy-Duty Electric Drive Conversion</li>
+                        <li>Dual Battery Pack Setup</li>
+                        <li>Priority Charging Station Access</li>
+                        <li>Full Fleet Monitoring Dashboard</li>
+                    </ul>
+                    <a href="order.html" class="btn-plan">Get Started</a>
+                </div>
+
+                <!-- Custom / Other Vehicles Plan -->
+                <div class="plan-card">
+                    <h3>Other Vehicle Types</h3>
+                    <p class="price">Custom Quote</p>
+                    <ul>
+                        <li>Customized EV Conversion Assessment</li>
+                        <li>Tailored Battery Capacity Options</li>
+                        <li>Quote provided based on vehicle specs</li>
+                        <li>Dedicated Fleet Support</li>
+                    </ul>
+                    <a href="order.html" class="btn-plan">Request Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fuel Savings Calculator Form -->
+        <section class="calculator-section">
+            <h2>Operational Savings Calculator</h2>
+            <p>Estimate how much your commercial tricycle fleet can save when switching from petrol to solar battery
+                swapping.</p>
+
+            <form id="savings-form" class="calc-form">
+                <div class="form-group">
+                    <label for="daily-distance">Average Daily Distance (km):</label>
+                    <input type="number" id="daily-distance" name="dailyDistance" min="10" max="300" value="80"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="swap-frequency">Daily Swaps Needed:</label>
+                    <select id="swap-frequency" name="swapFrequency">
+                        <option value="1">1 Swap per day (approx. 60-80 km)</option>
+                        <option value="2" selected>2 Swaps per day (approx. 120-160 km)</option>
+                        <option value="3">3 Swaps per day (approx. 180+ km)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Calculate Savings</button>
+            </form>
+
+            <div id="calc-results" class="calc-results-box" style="display: none;">
+                <h3>Estimated Savings Summary</h3>
+                <p><strong>Daily Fuel Cost (Petrol):</strong> ₦<span id="petrol-cost">0</span></p>
+                <p><strong>Daily Solar Swap Cost:</strong> ₦<span id="solar-cost">0</span></p>
+                <p class="highlight-savings"><strong>Estimated Daily Savings:</strong> ₦<span
+                        id="daily-savings">0</span></p>
+                <p class="highlight-savings"><strong>Estimated Monthly Savings (26 Days):</strong> ₦<span
+                        id="monthly-savings">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section (Consistent with your other pages) -->
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-column">
+                <h4>Solar Charge Africa</h4>
+                <p>Powering clean, affordable, and off-grid electric transport for commercial operators.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Services &amp; Calculator</a></li>
+                    <li><a href="order.html">Fleet Inquiry</a></li>
+                    <li><a href="siteplan.html">Site Plan</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact &amp; Support</h4>
+                <p>Email: info@solarchargeafrica.com</p>
+                <p>Enugu State &amp; Lagos, Nigeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Solar Charge Africa | Alexandra Ozomma | Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

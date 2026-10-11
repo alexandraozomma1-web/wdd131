@@ -1,0 +1,332 @@
+
+.services-section {
+    margin-bottom: 2rem;
+}
+
+.services-section h2 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+
+.service-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.service-card h3 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    color: var(--dark-bg);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.service-card .price, 
+.service-price {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.05rem;
+}
+
+/* Subscription Plans Container Box */
+.subscription-plans-section {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.subscription-plans-section h2,
+.subscription-plans-section .section-title {
+    color: #0f172a; /* Sharp dark navy/black */
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subscription-plans-section .section-desc {
+    color: #1e293b; /* Dark slate gray for high contrast */
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.plan-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-card.featured {
+    border: 2px solid #064e3b;
+}
+
+.plan-card h3 {
+    color: #0f172a;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+
+.plan-card .price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0.5rem 0;
+}
+
+.plan-card .price span {
+    font-size: 0.85rem;
+    color: #1e293b; 
+    font-weight: 600;
+}
+
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+    text-align: center;
+}
+
+.plan-card ul li {
+    margin-bottom: 0.6rem;
+    font-size: 0.875rem;
+    color: #0f172a; 
+    line-height: 1.4;
+}
+
+
+.plan-card .btn-plan {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #064e3b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0 0.5rem;
+    margin: 1.5rem 0;
+    text-align: left; /* Left align for readability */
+}
+
+.plan-card ul li {
+    position: relative;
+    padding-left: 1.5rem; 
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    color: #0f172a; 
+    line-height: 1.4;
+}
+
+/* /* Green Checkmark Bullet Points  */
+.plan-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #064e3b; 
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+
+.calculator-section {
+    max-width: 680px;            
+    margin: 2rem auto;           
+    background-color: #ffffff;  
+    border: 1px solid #d1d5db;   
+    border-radius: 12px;         
+    padding: 2.5rem 2rem;        
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.calculator-section h2 {
+    text-align: center;
+    color: #0f172a;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.calculator-section > p {
+    text-align: center;
+    color: #1e293b;             
+    margin-bottom: 1.75rem;
+}
+
+.calc-form .form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;           
+}
+
+.calc-form label {
+    display: block;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.calc-form input,
+.calc-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+
+.calc-form .primary-btn,
+.calc-form button[type="submit"] {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #064e3b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.calc-form .primary-btn:hover {
+    background-color: #04382a;
+}
+
+.subscription-plans-section,
+.calculator-section {
+    max-width: 1100px;           
+    width: 100%;                 
+    margin: 2.5rem auto;         
+    background-color: #ffffff;   
+    border: 1px solid #d1d5db;   
+    border-radius: 12px;        
+    padding: 2.5rem 2rem;        
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+
+.calculator-section .calc-form {
+    max-width: 600px;           
+    margin: 0 auto;  
+}            
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--dark-bg);
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.6rem;
+    border: 1px solid #6b7280;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--dark-bg);
+    background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.calc-results-box {
+    background: var(--light-bg);
+    border-left: 5px solid var(--secondary-color);
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+}
+
+.highlight-savings {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* In styles/menu.css */
+.page-banner {
+    background: linear-gradient(rgba(4, 46, 32, 0.95), rgba(15, 23, 42, 0.95)), url('../images/ev-charging-station.webp') no-repeat center center / cover;
+    color: var(--white);
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.page-banner p {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Subscription Cards Grid Layout */
+#services-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Desktop Grid Layout for Cards */
+@media (min-width: 768px) {
+    #services-container.hubs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

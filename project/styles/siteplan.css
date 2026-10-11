@@ -1,105 +1,20 @@
-:root {
-    --primary-color: #F59E0B;   /* Solar Amber */
-    --primary-light: #FCD34D;   /* Lighter Amber for dark backgrounds */
-    --secondary-color: #074F37; /* Eco Green */
-    --accent-color: #1E3A8A;    /* Dark Tech Blue (WCAG AAA compliant) */
-    --dark-bg: #1F2937;         /* Charcoal */
-    --light-bg: #F3F4F6;        /* Light Grey */
-    --white: #ffffff;
-    --heading-font: 'Segoe UI', Tahoma, Geneva, sans-serif;
-    --body-font: Verdana, sans-serif;
-}
 
-/* Universal Reset Fix */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: var(--body-font);
-    background-color: var(--light-bg);
-    color: var(--dark-bg);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Header Matching index.css */
-header {
-    background-color: var(--secondary-color);
+.siteplan-banner {
+    background: var(--secondary-color);
     border-bottom: 4px solid var(--primary-color);
-    padding: 1.5rem 1rem;
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
     text-align: center;
-    color: var(--white);
-}
-
-header h1 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    color: var(--primary-light); /* Lighter amber for 7.5:1 WCAG contrast */
-    margin-bottom: 0.3rem;
-}
-
-header h2 {
-    font-size: 1rem;
-    font-weight: normal;
-    color: var(--white);
-}
-
-/* Navigation Bar */
-.plan-nav {
-    margin-top: 1.2rem;
-}
-
-.plan-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.plan-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.plan-nav a:hover,
-.plan-nav a.active {
-    background-color: var(--primary-color);
-    color: #000000; /* Pure black text over amber for high contrast */
-}
-
-.plan-nav a:focus-visible {
-    outline: 2px solid var(--white);
-    outline-offset: 2px;
-}
-
-/* Main Layout Grid */
-main {
-    flex: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first single column */
-    gap: 1.5rem; /* Prevents cards from smashing together */
+    margin-bottom: 2rem;
 }
 
 .plan-section {
     background-color: var(--white);
     border-radius: 8px;
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     border-left: 5px solid var(--secondary-color);
     display: flex;
@@ -170,37 +85,33 @@ main {
     border: 1px solid #ccc;
 }
 
-/* Footer Matched with index.css */
-footer {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    margin-top: auto;
-    border-top: 4px solid var(--primary-color);
-}
-
-footer a {
-    color: #FDE047; /* Bright yellow link passes WCAG AA on dark green */
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: var(--white);
-}
-
-/* Responsive Grid for Desktop Screens */
+/* Site Plan Responsive Grid */
 @media (min-width: 768px) {
     main {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
-    .plan-section.full-width {
+    .siteplan-banner, 
+    .full-width {
         grid-column: 1 / -1;
     }
 
     .wireframe-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Force header navigation to ignore siteplan list styles */
+header nav ul {
+    list-style: none !important;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    header nav ul {
+        flex-direction: row;
     }
 }
