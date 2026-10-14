@@ -1,4 +1,146 @@
 
+/* Daily Cost Comparison Section */
+.cost-comparison-section {
+    margin: 2rem auto;
+    max-width: 1000px;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.cost-comparison-section h2 {
+    color: #004d40;
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+}
+
+.section-subtitle {
+    font-size: 0.95rem;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.comparison-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.comparison-card {
+    background-color: #ffffff;
+    border: 1px solid #004d40;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.comparison-card.featured {
+    border: 2px solid #004d40;
+}
+
+.card-badge {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #004d40;
+    margin-bottom: 0.85rem;
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.4rem;
+}
+
+.cost-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.cost-item {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.cost-item.petrol {
+    background-color: #fff5f5;
+    border: 1px solid #fecaca;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+}
+.cost-item.electric {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.cost-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #111827;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.cost-item.petrol .cost-amount {
+    color: #991b1b;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.cost-item.electric .cost-amount {
+    color: #064e3b;
+    font-weight:800;
+    font-size: 1.2rem;
+}
+
+.card-title, 
+.comparison-card h3, 
+.comparison-card h2 {
+    text-align: center; 
+    margin-bottom: 1rem;
+}
+
+.comparison-card {
+    text-align: center;
+}
+
+.savings-highlight {
+    background-color: #004d40;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.savings-highlight strong {
+    color: #fef08a;
+}
+
+.conversion-info {
+    font-size: 0.9rem;
+    color: #111827;
+    border-top: 1px dashed #cccccc;
+    padding-top: 0.75rem;
+    text-align: center;
+}
+
+.conversion-info p, 
+.conversion-info strong {
+    color: #111827;
+    font-weight: 600;
+}
+
 .services-section {
     margin-bottom: 2rem;
 }
@@ -141,7 +283,7 @@
     list-style: none;
     padding: 0 0.5rem;
     margin: 1.5rem 0;
-    text-align: left; /* Left align for readability */
+    text-align: left;
 }
 
 .plan-card ul li {
@@ -164,69 +306,99 @@
     font-size: 0.9rem;
 }
 
-
+/* Operational Savings & ROI Calculator Section */
 .calculator-section {
-    max-width: 680px;            
-    margin: 2rem auto;           
-    background-color: #ffffff;  
-    border: 1px solid #d1d5db;   
-    border-radius: 12px;         
-    padding: 2.5rem 2rem;        
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 2.5rem auto;
+    max-width: 800px;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
 }
-
 
 .calculator-section h2 {
+    color: #004d40;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
     text-align: center;
-    color: #0f172a;
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
 }
 
-.calculator-section > p {
-    text-align: center;
-    color: #1e293b;             
-    margin-bottom: 1.75rem;
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
-.calc-form .form-group {
-    margin-bottom: 1.25rem;
-    text-align: left;           
-}
-
-.calc-form label {
+.form-group label {
     display: block;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+    color: #111827;
+    font-size: 0.95rem;
 }
 
-.calc-form input,
-.calc-form select {
+.form-input {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    border: 1px solid #94a3b8;
     border-radius: 6px;
-    font-size: 1rem;
+    color: #111827;
+    background-color: #ffffff;
 }
 
-
-.calc-form .primary-btn,
-.calc-form button[type="submit"] {
-    width: 100%;
-    padding: 0.85rem;
-    background-color: #064e3b;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 0.5rem;
+.form-input:focus {
+    outline: none;
+    border-color: #004d40;
+    box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.15);
 }
 
-.calc-form .primary-btn:hover {
-    background-color: #04382a;
+/* Results Box Container */
+.results-box {
+    display: none ;
+    margin-top: 1.5rem;
+    background-color: #f8fafc;
+    border-left: 5px solid #004d40;
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.results-box h3 {
+    color: #004d40;
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    font-size: 1.15rem;
+}
+
+.results-box p {
+    color: #111827;
+    font-size: 0.95rem;
+    margin: 0.4rem 0;
+}
+
+.results-divider {
+    border: 0;
+    border-top: 1px dashed #cbd5e1;
+    margin: 0.75rem 0;
+}
+
+/* Highlighted Savings Lines */
+.highlight-line {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #064e3b;
+}
+
+/* Payback & Profit Highlight Lines */
+.roi-line {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #991b1b; 
+}
+
+.roi-line span {
+    color: #004d40;
+    font-weight: 800;
 }
 
 .subscription-plans-section,
@@ -242,11 +414,6 @@
     box-sizing: border-box;
 }
 
-
-.calculator-section .calc-form {
-    max-width: 600px;           
-    margin: 0 auto;  
-}            
 
 .form-group {
     display: flex;

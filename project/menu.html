@@ -44,6 +44,57 @@
             </div>
         </section>
 
+<!-- 2. Daily Cost Comparison Section (INSERT HERE ABOVE THE IMAGE) -->
+<section class="cost-comparison-section">
+    <h2 class="card-title">Daily Running Cost Comparison</h2>
+    <p class="section-subtitle">Compare daily petrol expenses against off-grid solar battery swapping for commercial transit.</p>
+
+    <div class="comparison-cards-wrapper">
+        <!-- Delivery Motorcycle Card -->
+        <article class="comparison-card">
+            <h3 class="card-title">Delivery Motorcycle</h3>
+            <div class="cost-grid">
+                <div class="cost-item petrol">
+                    <span class="cost-label">Petrol (Daily)</span>
+                    <span class="cost-amount">₦10,000</span>
+                </div>
+                <div class="cost-item electric">
+                    <span class="cost-label">Solar Swap (Daily)</span>
+                    <span class="cost-amount">₦4,500</span>
+                </div>
+            </div>
+            <div class="savings-highlight">
+                <span>Net Daily Savings:</span> <strong>₦5,500 / day</strong>
+            </div>
+            <div class="conversion-info">
+                <p><strong>Conversion Kit:</strong> ₦1.5 Million / vehicle</p>
+            </div>
+        </article>
+
+        <!-- Commercial Tricycle (Keke) Card -->
+        <article class="comparison-card featured">
+            <h3 class="card-title">Tricycle (Keke Napep)</h3>
+            <div class="cost-grid">
+                <div class="cost-item petrol">
+                    <span class="cost-label">Petrol (Daily)</span>
+                    <span class="cost-amount">₦20,000</span>
+                </div>
+                <div class="cost-item electric">
+                    <span class="cost-label">Solar Swap (Daily)</span>
+                    <span class="cost-amount">₦7,500</span>
+                </div>
+            </div>
+            <div class="savings-highlight">
+                <span>Net Daily Savings:</span> <strong>₦12,500 / day</strong>
+            </div>
+            <div class="conversion-info">
+                <p><strong>Conversion Kit:</strong> ₦3.5 Million / vehicle</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+
         <div class="banner-image-wrapper" style="margin-bottom: 2rem; text-align: center;">
             <img src="images/evs-charging-park.webp" alt="Solar charging station for tricycles" loading="lazy"
                 style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 8px;">
@@ -110,41 +161,53 @@
             </div>
         </section>
 
-        <!-- Fuel Savings Calculator Form -->
-        <section class="calculator-section">
-            <h2>Operational Savings Calculator</h2>
-            <p>Estimate how much your commercial tricycle fleet can save when switching from petrol to solar battery
-                swapping.</p>
+<!-- Operational Savings Calculator Section -->
+            <section class="calculator-section">
+                <h2>Operational Savings Calculator</h2>
+                <p class="section-subtitle">Enter what you currently spend on petrol to see your exact savings and payback period.</p>
 
-            <form id="savings-form" class="calc-form">
-                <div class="form-group">
-                    <label for="daily-distance">Average Daily Distance (km):</label>
-                    <input type="number" id="daily-distance" name="dailyDistance" min="10" max="300" value="80"
-                        required>
+                <form id="savings-calculator-form">
+                    <!-- Vehicle Type Selector -->
+                    <div class="form-group">
+                        <label for="vehicle-type"><strong>Select Vehicle Type:</strong></label>
+                        <select id="vehicle-type" class="form-input">
+                            <option value="keke">Tricycle / Keke (₦3.5M Conversion Kit)</option>
+                            <option value="bike">Delivery Motorcycle (₦1.5M Conversion Kit)</option>
+                        </select>
+                    </div>
+
+                    <!-- Custom Daily Petrol Spend Input -->
+                    <div class="form-group">
+                        <label for="custom-petrol"><strong>Your Daily Petrol Expense (₦):</strong></label>
+                        <input type="number" id="custom-petrol" class="form-input" placeholder="e.g. 20000" min="1000" step="500" required>
+                    </div>
+
+                    <!-- Daily Swaps Needed -->
+                    <div class="form-group">
+                        <label for="daily-swaps"><strong>Daily Swaps Needed:</strong></label>
+                        <select id="daily-swaps" class="form-input">
+                            <option value="1">1 Swap per day (Approx. 60–80 km)</option>
+                            <option value="2" selected>2 Swaps per day (Approx. 120–160 km)</option>
+                            <option value="3">3 Swaps per day (Approx. 180–240 km)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Calculate My Savings & ROI</button>
+                </form>
+
+                <!-- Results Box with Payback & Profit Analysis -->
+                <div id="calculator-results" class="results-box">
+                    <h3>Your Personal Savings & Payback Summary</h3>
+                    <p><strong>Your Daily Petrol Expense:</strong> <span id="res-petrol">₦0</span></p>
+                    <p><strong>Daily Solar Swap Cost:</strong> <span id="res-swap">₦0</span></p>
+                    <hr class="results-divider">
+                    <p class="highlight-line"><strong>Estimated Daily Savings:</strong> <span id="res-daily-savings">₦0</span></p>
+                    <p class="highlight-line"><strong>Estimated Monthly Savings (26 Days):</strong> <span id="res-monthly-savings">₦0</span></p>
+                    <hr class="results-divider">
+                    <p class="roi-line"><strong>Investment Payback Period:</strong> <span id="res-payback">-</span></p>
+                    <p class="roi-line"><strong>Annual Net Savings (After Payback):</strong> <span id="res-annual-profit">₦0 / year</span></p>
                 </div>
-
-                <div class="form-group">
-                    <label for="swap-frequency">Daily Swaps Needed:</label>
-                    <select id="swap-frequency" name="swapFrequency">
-                        <option value="1">1 Swap per day (approx. 60-80 km)</option>
-                        <option value="2" selected>2 Swaps per day (approx. 120-160 km)</option>
-                        <option value="3">3 Swaps per day (approx. 180+ km)</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn primary-btn">Calculate Savings</button>
-            </form>
-
-            <div id="calc-results" class="calc-results-box" style="display: none;">
-                <h3>Estimated Savings Summary</h3>
-                <p><strong>Daily Fuel Cost (Petrol):</strong> ₦<span id="petrol-cost">0</span></p>
-                <p><strong>Daily Solar Swap Cost:</strong> ₦<span id="solar-cost">0</span></p>
-                <p class="highlight-savings"><strong>Estimated Daily Savings:</strong> ₦<span
-                        id="daily-savings">0</span></p>
-                <p class="highlight-savings"><strong>Estimated Monthly Savings (26 Days):</strong> ₦<span
-                        id="monthly-savings">0</span></p>
-            </div>
-        </section>
+            </section>
     </main>
 
     <!-- Footer Section (Consistent with your other pages) -->

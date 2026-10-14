@@ -1,54 +1,67 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Select Form & Input Elements matching menu.html
-    const calcForm = document.getElementById("savings-form");
-    const dailyDistanceInput = document.getElementById("daily-distance");
-    const swapFrequencySelect = document.getElementById("swap-frequency");
+    const calcForm = document.getElementById("savings-calculator-form");
+    const resultsBox = document.getElementById("calculator-results");
+    const vehicleTypeSelect = document.getElementById("vehicle-type");
+    const customPetrolInput = document.getElementById("custom-petrol");
 
-    // Output Display Elements matching menu.html
-    const calcResultsBox = document.getElementById("calc-results");
-    const petrolCostDisplay = document.getElementById("petrol-cost");
-    const solarCostDisplay = document.getElementById("solar-cost");
-    const dailySavingsDisplay = document.getElementById("daily-savings");
-    const monthlySavingsDisplay = document.getElementById("monthly-savings");
+    if (!calcForm || !resultsBox) return;
 
-    // Exit early if the calculator form is not on the current page
-    if (!calcForm) return;
+    // Set dynamic default petrol price when vehicle selection changes
+    if (vehicleTypeSelect && customPetrolInput) {
+        customPetrolInput.value = vehicleTypeSelect.value === "keke" ? 20000 : 10000;
 
-    // Fixed economic estimates for calculation
-    const PETROL_COST_PER_KM = 150;  // Estimated NGN petrol cost per km
-    const SOLAR_SWAP_COST_PER_KM = 80; // Estimated NGN solar swap cost per km
-    const OPERATIONAL_DAYS_PER_MONTH = 26;
-
-    // 2. Calculation Logic Function
-    function calculateSavings(e) {
-        if (e) e.preventDefault();
-
-        const dailyKm = parseFloat(dailyDistanceInput.value) || 0;
-        const swaps = parseInt(swapFrequencySelect.value, 10) || 1;
-
-        if (dailyKm <= 0) return;
-
-        // Daily costs based on distance and swap pricing
-        const dailyPetrolCost = dailyKm * PETROL_COST_PER_KM;
-        const dailySolarCost = dailyKm * SOLAR_SWAP_COST_PER_KM * (swaps * 0.5); // scaled by swap frequency
-        
-        const dailySavings = dailyPetrolCost - dailySolarCost;
-        const monthlySavings = dailySavings * OPERATIONAL_DAYS_PER_MONTH;
-
-        // 3. Update DOM Output Displays
-        petrolCostDisplay.textContent = Math.round(dailyPetrolCost).toLocaleString();
-        solarCostDisplay.textContent = Math.round(dailySolarCost).toLocaleString();
-        dailySavingsDisplay.textContent = Math.round(dailySavings).toLocaleString();
-        monthlySavingsDisplay.textContent = Math.round(monthlySavings).toLocaleString();
-
-        // Reveal the results box
-        if (calcResultsBox) {
-            calcResultsBox.style.display = "block";
-        }
+        vehicleTypeSelect.addEventListener("change", () => {
+            customPetrolInput.value = vehicleTypeSelect.value === "keke" ? 20000 : 10000;
+        });
     }
 
-    // 4. Attach Event Listener for Form Submission
-    calcForm.addEventListener("submit", calculateSavings);
+    // Hide results box initially
+    resultsBox.style.display = "none";
+
+    // Handle form submit
+    calcForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const vehicleType = vehicleTypeSelect.value;
+        const userPetrol = parseFloat(customPetrolInput.value) || 0;
+        const swapsCount = parseInt(document.getElementById("daily-swaps").value, 10) || 2;
+
+        let swapRatePerUnit = 0;
+        let conversionCost = 0;
+
+        if (vehicleType === "keke") {
+            swapRatePerUnit = 2250;   // ₦2,250 per swap (2 swaps = ₦4,500/day)
+            conversionCost = 3500000; // ₦3.5M conversion cost
+        } else {
+            swapRatePerUnit = 1250;   // ₦1,250 per swap (2 swaps = ₦2,500/day)
+            conversionCost = 1500000; // ₦1.5M conversion cost
+        }
+
+        const totalDailySwapCost = swapRatePerUnit * swapsCount;
+        const dailySavings = userPetrol - totalDailySwapCost;
+
+        // If petrol entered is less than swap cost, alert or prevent negative payback
+        if (dailySavings <= 0) {
+            alert("Your entered daily petrol cost is lower than the solar swap cost. Please enter a realistic daily fuel budget.");
+            return;
+        }
+
+        const monthlySavings = dailySavings * 26; // 26 working days per month
+        const annualSavings = monthlySavings * 12;
+
+        // Payback Period Calculations based on driver's actual custom input
+        const paybackDays = Math.ceil(conversionCost / dailySavings);
+        const paybackMonths = (paybackDays / 26).toFixed(1);
+
+        // Update UI Outputs
+        document.getElementById("res-petrol").textContent = `₦${userPetrol.toLocaleString()}`;
+        document.getElementById("res-swap").textContent = `₦${totalDailySwapCost.toLocaleString()} (${swapsCount} swap${swapsCount > 1 ? 's' : ''})`;
+        document.getElementById("res-daily-savings").textContent = `₦${dailySavings.toLocaleString()}`;
+        document.getElementById("res-monthly-savings").textContent = `₦${monthlySavings.toLocaleString()}`;
+        document.getElementById("res-payback").textContent = `~${paybackMonths} Months (${paybackDays} operating days)`;
+        document.getElementById("res-annual-profit").textContent = `₦${annualSavings.toLocaleString()} / year`;
+
+        // Unhide summary container
+        resultsBox.style.display = "block";
+    });
 });
